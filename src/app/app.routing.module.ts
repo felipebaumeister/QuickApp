@@ -6,11 +6,12 @@ import { Routes, RouterModule } from '@angular/router'
 
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { AppBuildingComponent } from "./errors/app-building/app-building.component";
+import { LoginComponent } from './home/login/login.component';
 
 
 const routes : Routes = [
-    { path: '', component : AppBuildingComponent},
-    { path: 'vagas', component: VagaListComponent, 
+    { path: '', component : LoginComponent},
+    { path: 'vagas/:IdVaga', component: VagaListComponent, 
     resolve : {
         vagas: VagaListResolver
     }},

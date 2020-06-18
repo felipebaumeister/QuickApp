@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { ErrorsModule } from './errors/errors.module';
 import { VagasModule } from './vagas/vagas.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { VagasModule } from './vagas/vagas.module';
     BrowserModule,
     AppRoutingModule,
     ErrorsModule,
-    VagasModule
+    VagasModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

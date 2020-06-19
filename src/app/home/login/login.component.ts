@@ -1,3 +1,4 @@
+import { PlatformDetectorService } from '../../core/platform-detector/platform-detector.service';
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router) { }
+    private router: Router,
+    private platformDetectorService: PlatformDetectorService) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -32,10 +34,9 @@ export class LoginComponent implements OnInit {
        this.authService.authenticate(userName, password)
        .subscribe(data => this.router.navigate(['vagas', userName]), 
        err => {
-        console.log('Não autenticado');
-        console.log(err);
+
          this.loginForm.reset();
-         this.userNameInput.nativeElement.focus();
+        this.platformDetectorService.isPlatformBrowser() && this.userNameInput.nativeElement.focus();
        })
   }
  

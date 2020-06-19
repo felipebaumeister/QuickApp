@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule} from '@angular/forms';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -13,6 +14,6 @@ import { ReactiveFormsModule} from '@angular/forms';
     VmessageModule,
     RouterModule
   ],
-  declarations: [LoginComponent]
+  declarations: [LoginComponent, SignupComponent]
 })
 export class HomeModule { }

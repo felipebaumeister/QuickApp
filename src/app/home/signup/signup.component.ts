@@ -9,7 +9,8 @@ import { NewUser } from './new-user';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
+  providers: [ UserNotTekenValidatorService ]
 })
 export class SignupComponent implements OnInit {
 

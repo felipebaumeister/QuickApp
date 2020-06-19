@@ -1,3 +1,4 @@
+import { SignupService } from './signup/signup.service';
 import { RouterModule } from '@angular/router';
 import { VmessageModule } from './../shared/components/vmessage/vmessage.module';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,15 @@ import { HomeRoutingModule } from './home.routing.module';
     RouterModule,
     HomeRoutingModule
   ],
-  declarations: [LoginComponent, SignupComponent, ConfirmarEmailComponent, CadastroPerfilComponent, HomeComponent]
+  declarations: [
+    LoginComponent,
+     SignupComponent,
+      ConfirmarEmailComponent, 
+      CadastroPerfilComponent,
+      HomeComponent
+    ],
+    providers : [
+      SignupService
+    ]
 })
 export class HomeModule { }

@@ -47,9 +47,9 @@ export class LoginComponent implements OnInit {
           console.log("user")
           console.log(user)
           if(user.statusCadasto && user.statusCadasto === 'completo')
-          return this.router.navigate(['vagas'])
+          return this.router.navigate(['/vagas'])
           else
-          return this.router.navigate(['cadastro-perfil'])
+          return this.router.navigate(['/home/cadastro-perfil'])
         })
       
         }, 

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 const KEY = 'authToken'
 @Injectable({

@@ -7,6 +7,8 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { ConfirmarEmailComponent } from './confirmar-email/confirmar-email.component';
 import { CadastroPerfilComponent } from './cadastro-perfil/cadastro-perfil.component';
+import { HomeComponent } from './home.component';
+import { HomeRoutingModule } from './home.routing.module';
 
 
 @NgModule({
@@ -14,8 +16,9 @@ import { CadastroPerfilComponent } from './cadastro-perfil/cadastro-perfil.compo
     CommonModule,
     ReactiveFormsModule,
     VmessageModule,
-    RouterModule
+    RouterModule,
+    HomeRoutingModule
   ],
-  declarations: [LoginComponent, SignupComponent, ConfirmarEmailComponent, CadastroPerfilComponent]
+  declarations: [LoginComponent, SignupComponent, ConfirmarEmailComponent, CadastroPerfilComponent, HomeComponent]
 })
 export class HomeModule { }

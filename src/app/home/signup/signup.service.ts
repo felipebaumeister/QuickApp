@@ -1,3 +1,4 @@
+import { NewUser } from './new-user';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -12,5 +13,11 @@ export class SignupService {
 
   checkUserNameTaken(userName: string) {
         return this.http.get(API + '/Auth/user-exists/'+ userName)
+  }
+
+  signup(newUser: NewUser) {
+     console.log(newUser);
+     newUser.confirmPassword = newUser.password;
+     return this.http.post(API + '/Auth/nova-conta', newUser)
   }
 }

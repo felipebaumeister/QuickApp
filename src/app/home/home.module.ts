@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule} from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
+import { ConfirmarEmailComponent } from './confirmar-email/confirmar-email.component';
+import { CadastroPerfilComponent } from './cadastro-perfil/cadastro-perfil.component';
 
 
 @NgModule({
@@ -14,6 +16,6 @@ import { SignupComponent } from './signup/signup.component';
     VmessageModule,
     RouterModule
   ],
-  declarations: [LoginComponent, SignupComponent]
+  declarations: [LoginComponent, SignupComponent, ConfirmarEmailComponent, CadastroPerfilComponent]
 })
 export class HomeModule { }

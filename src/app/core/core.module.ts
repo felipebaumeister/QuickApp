@@ -12,7 +12,7 @@ import { FooterComponent } from './footer/footer.component';
     RouterModule
   ],
   declarations: [ HeaderComponent, FooterComponent],
-  exports: [ HeaderComponent],
+  exports: [ HeaderComponent, FooterComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

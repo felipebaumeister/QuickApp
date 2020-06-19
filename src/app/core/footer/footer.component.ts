@@ -1,4 +1,7 @@
+import { Observable } from 'rxjs';
+import { UserService } from 'src/app/core/user/user.service';
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user/user';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  user$ : Observable<User>;
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.user$ = this.userService.getUser();
   }
 
 }

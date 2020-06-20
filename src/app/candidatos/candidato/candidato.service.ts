@@ -5,6 +5,8 @@ import { Candidato } from './candidato';
 
 const API = "https://localhost:44343"
 
+const KEY = "Candidato";
+
 @Injectable()
 export class CandidatoService  {
     
@@ -14,5 +16,21 @@ export class CandidatoService  {
      console.log(candidato);
  
      return this.http.post(API + '/api/Candidato', candidato)
+  }
+
+  setData(candidato: Candidato){
+    window.localStorage.setItem(KEY, JSON.stringify(candidato))
+  }
+
+  getData(): Candidato {
+    return JSON.parse(window.localStorage.getItem(KEY)) as Candidato;
+  }
+
+  exists(): boolean {
+    return !!window.localStorage.getItem(KEY);
+  }
+
+  removeData(){
+    window.localStorage.removeItem(KEY)
   }
 }

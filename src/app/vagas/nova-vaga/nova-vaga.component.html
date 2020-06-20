@@ -1,3 +1,28 @@
-<p>
-  nova-vaga works!
-</p>
+<h4 class="text-center"> Cadastrar Candidato </h4>
+
+<form class="form mt-4" [formGroup]="vagaForm" (ngSubmit)="addCandidato()">
+  <div class="form-group">
+    <select formControlName="idOcupacao" placeholder="Ocupação" class="form-control" (change)="selectOption($event.target.value)" >
+      <option *ngFor="let option of ocupacoes; index as i" [value]="option.id" [selected]="ocupacoes[0]">
+        {{ option.name }}
+      </option>
+    </select>
+    <app-vmessage *ngIf="vagaForm.get('idOcupacao').errors?.required" text="O Ocupação é obrogatório!">
+      </app-vmessage>
+  </div>
+  <div class="form-group">
+    <input formControlName="descricao" placeholder="Descricao" class="form-control" />
+    <app-vmessage *ngIf="vagaForm.get('descricao').errors?.required" text="O Descrição é obrogatório!">
+    </app-vmessage>
+  </div>
+  <div class="form-group">
+      <input formControlName="descricaoIntegra" placeholder="Descricao" class="form-control" />
+      <app-vmessage *ngIf="vagaForm.get('descricaoIntegra').errors?.required" text="O descricaoIntegra é obrogatório!">
+      </app-vmessage>
+    </div>
+  
+
+  <button [disabled]="vagaForm.invalid || vagaForm.pending" class="btn btn-primary btn-block">Salvar</button>
+  <button class="btn btn-danger btn-block">Linpar</button>
+
+</form>

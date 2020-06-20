@@ -1,3 +1,4 @@
+import { Ocupacao } from './../../ocupacao/ocupacao';
 import { Empresa } from './../../empresas/empresa/empresa';
 
 export interface Vaga {
@@ -7,10 +8,11 @@ descricaoIntegra: string;
 idEmpresa: string;
 concluida: boolean;
 idCandidatoAprovado: string;
-idIdCupacao: string;
-dataCriacao: Date;
-dataAtualizacao: Date;
+dataCriacao: string;
+dataAtualizacao: string;
 empresa : Empresa;
+idCupacao: string;
+ocupacao: Ocupacao;
 
     // Id { get; set; }
     // public string Descricao { get; set; }
@@ -21,6 +23,5 @@ empresa : Empresa;
     // public Guid? IdCandidatoAprovado { get; set; }
     // public Candidato Candidato { get; set; }
     // public List<VagaCandidato> VagasCandidato { get; set; }
-    // public Guid IdCupacao { get; set; }
-    // public Ocupacao Ocupacao { get; set; }
+
 }

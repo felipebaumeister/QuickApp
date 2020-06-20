@@ -25,4 +25,14 @@ export class VagaService{
         return this.http
         .get<Vaga[]>(API + '/' + UserName + '/photos', {params});
     }
+
+    add(vaga: Vaga) {
+        console.log(vaga);
+    
+        return this.http.post(API + '/api/Vaga', vaga)
+     }
 }
+
+
+
+

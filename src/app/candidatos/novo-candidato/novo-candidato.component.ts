@@ -84,10 +84,10 @@ export class NovoCandidatoComponent implements OnInit {
 
       novoCandidato.idUsuario = user.id;
       
-     debugger;
       this.candidatoService
         .add(novoCandidato).subscribe(() => {
-          this.router.navigate(['/candidato'])
+          this.candidatoService.setData(novoCandidato);
+          this.router.navigate(['','candidato'])
         }, err => console.log(err))
     })
 

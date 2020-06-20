@@ -1,3 +1,5 @@
+import { EmpresaService } from './../../empresas/empresa/empresa.service';
+import { CandidatoService } from './../../candidatos/candidato/candidato.service';
 import { User } from './user';
 import { TokenService } from './../token/token.service';
 import { Injectable } from '@angular/core';
@@ -12,7 +14,9 @@ export class UserService {
   private userName: string;
 
   private userSubject = new BehaviorSubject<User>(null);
-  constructor(private tokenService: TokenService) {
+  constructor(private tokenService: TokenService,
+    private candidatoService: CandidatoService,
+    private empresaService: EmpresaService) {
     this.tokenService.hasToken() && this.decodeAndNotify();
    }
 
@@ -34,6 +38,8 @@ export class UserService {
 
   logout() {
     this.tokenService.removeToken();
+    this.empresaService.removeData();
+    this.candidatoService.removeData();
     this.userSubject.next(null);
   }
 

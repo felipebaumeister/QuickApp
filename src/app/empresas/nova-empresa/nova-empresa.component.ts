@@ -69,6 +69,7 @@ export class NovaEmpresaComponent implements OnInit {
 
       this.empresaService
         .add(novaEmpresa).subscribe(() => {
+             this.empresaService.setData(novaEmpresa);
            this.router.navigate(['/empregador'])
         }, err => console.log(err))
     })

@@ -1,6 +1,24 @@
 <div class="text-center">
     <h2>Cadastro do perfil</h2>
     <p>
-        Aqui ficará o formulario de cadastro do perfil  <a [routerLink]="['/vagas']" >Vagas</a>
+        Para que possamos lhe oferecer uma experiencia melhor, preencha um perfil para acessar nosso site.
     </p>
-  </div>
+</div>
+<div class="text-center row">
+
+    <div class="col-md-4" *ngFor="let pf of perfis; let i = index">
+
+        <input [id]="pf" 
+        class="mr-1" 
+        type="radio"
+         [value]="pf" 
+         name="perfil" 
+         (change)="changePerfil(pf)" 
+         [checked]="i === 0">
+        <label [for]="pf">{{pf}}</label>
+    </div>
+    <label for="perfil"><b>Perfil: </b> </label>
+    <div id="perfil">{{perfil}}</div>
+</div>
+<app-novo-candidato *ngIf="perfil === 'candidato'"></app-novo-candidato>
+<app-nova-empresa *ngIf="perfil === 'empresa'"></app-nova-empresa>

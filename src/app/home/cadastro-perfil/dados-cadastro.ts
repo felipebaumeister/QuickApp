@@ -1,8 +1,7 @@
-import { User } from "src/app/core/user/user";
+import { User } from './../../core/user/user';
 
-export interface Empresa  {
-    id :string;
-    nome : string;
+export interface DadosCadastro {
+    nome: string;
     sobrenome: string;
     telefoneCelular: string;
     telefoneResidencial: string;
@@ -15,11 +14,14 @@ export interface Empresa  {
     dataCriacao: string;
     dataAtualizacao: string;
     dataNascimento: string;
-    idUsuario: string;
+    IdUsuario: string;
     usuario: User;
-    site: string;
 }
 
-// public Guid Id { get; set; }
-// public string Site { get; set; }
-// public List<Vaga> Vagas { get; set; }
+
+
+
+//adicionar
+
+// public List<AvaliacaoEmpresa> AvaliacoesEmpresa { get; set; }
+// public List<AvaliacaoCandidato> AvaliacoesCandidato { get; set; }

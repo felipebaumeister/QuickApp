@@ -1,3 +1,5 @@
+import { CandidatosModule } from './../candidatos/candidatos.module';
+
 import { SignupService } from './signup/signup.service';
 import { RouterModule } from '@angular/router';
 import { VmessageModule } from './../shared/components/vmessage/vmessage.module';
@@ -10,6 +12,7 @@ import { ConfirmarEmailComponent } from './confirmar-email/confirmar-email.compo
 import { CadastroPerfilComponent } from './cadastro-perfil/cadastro-perfil.component';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home.routing.module';
+import { EmpresasModule } from '../empresas/empresas.module';
 
 
 @NgModule({
@@ -18,7 +21,9 @@ import { HomeRoutingModule } from './home.routing.module';
     ReactiveFormsModule,
     VmessageModule,
     RouterModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    EmpresasModule,
+    CandidatosModule
   ],
   declarations: [
     LoginComponent,

@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroPerfilComponent implements OnInit {
 
+  perfis: any = ['candidato', 'empresa'];
+
+  perfil: string = this.perfis[0];
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  changePerfil(perfil){
+    this.perfil = perfil;
   }
 
 }

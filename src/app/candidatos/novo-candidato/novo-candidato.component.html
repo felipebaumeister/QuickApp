@@ -1,0 +1,68 @@
+<h4 class="text-center"> Cadastrar Candidato </h4>
+
+<form class="form mt-4" [formGroup]="candidatoForm" (ngSubmit)="addCandidato()">
+  <div class="form-group">
+    <select formControlName="idOcupacao" placeholder="Ocupação" class="form-control" (change)="selectOption($event.target.value)" >
+      <option *ngFor="let option of ocupacoes; index as i" [value]="option.id" [selected]="ocupacoes[0]">
+        {{ option.name }}
+      </option>
+    </select>
+    <app-vmessage *ngIf="candidatoForm.get('idOcupacao').errors?.required" text="O nome é obrogatório!">
+      </app-vmessage>
+  </div>
+  <div class="form-group">
+    <input formControlName="nome" placeholder="Nome" class="form-control" />
+    <app-vmessage *ngIf="candidatoForm.get('nome').errors?.required" text="O nome é obrogatório!">
+    </app-vmessage>
+  </div>
+  <div class="form-group">
+    <input formControlName="sobrenome" placeholder="Sobrenome" class="form-control" />
+    <app-vmessage *ngIf="candidatoForm.get('sobrenome').errors?.required" text="O Sobrenome é obrogatório!">
+    </app-vmessage>
+  </div>
+  <div class="form-group">
+    <input formControlName="telefoneCelular" placeholder="Telefone Celular" class="form-control" />
+    <app-vmessage *ngIf="candidatoForm.get('telefoneCelular').errors?.required"
+      text="O Telefone Celular é obrogatório!">
+    </app-vmessage>
+  </div>
+  <div class="form-group">
+    <input formControlName="telefoneResidencial" placeholder="Telefone Residencial" class="form-control" />
+  </div>
+  <div class="form-group">
+    <input formControlName="telefoneComercial" placeholder="Telefone Comercial" class="form-control" />
+  </div>
+  <div class="form-group">
+    <input formControlName="CEP" placeholder="CEP" class="form-control" />
+    <app-vmessage *ngIf="candidatoForm.get('CEP').errors?.required" text="O CEP é obrogatório!">
+    </app-vmessage>
+  </div>
+  <div class="form-group">
+    <input formControlName="endereco" placeholder="endereco" class="form-control" />
+    <app-vmessage *ngIf="candidatoForm.get('CEP').errors?.required" text="O Endereço é obrogatório!">
+    </app-vmessage>
+  </div>
+
+  <div class="form-group">
+    <input formControlName="numero" placeholder="Numero" class="form-control" />
+  </div>
+
+  <div class="form-group">
+    <input formControlName="complemento" placeholder="complemento" class="form-control" />
+  </div>
+  <div class="form-group">
+    <input formControlName="CPF_CNPJ" placeholder="CPF_CNPJ" class="form-control" />
+    <app-vmessage *ngIf="candidatoForm.get('CPF_CNPJ').errors?.required" text="O CPF_CNPJ é obrogatório!">
+    </app-vmessage>
+  </div>
+  <div class="form-group">
+    <input formControlName="dataNascimento" placeholder="Data de Nascimento" class="form-control" />
+    <app-vmessage *ngIf="candidatoForm.get('dataNascimento').errors?.required" text="A Data Nascimento é obrogatório!">
+    </app-vmessage>
+  </div>
+
+
+  <button [disabled]="candidatoForm.invalid || candidatoForm.pending" class="btn btn-primary btn-block">Salvar</button>
+  <button class="btn btn-danger btn-block">Linpar</button>
+
+</form>

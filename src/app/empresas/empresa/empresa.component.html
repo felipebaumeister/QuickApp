@@ -1,11 +1,31 @@
-<h2>
-    Area Empregador
-</h2>
-<hr />
-<div class="col-6 mb-3">
-    <a [routerLink]="['', 'nova-vaga']" class="btn btn-secondary text-white">
-        Nova Vaga
-        <i class="fa fa-plus-circle fa-1x"></i>
-    </a>
+<div class="container-fluid">
+    <h2>
+        Area Empregador
+    </h2>
+    <hr />
+    <div class="col-6 mb-3">
+        <a [routerLink]="['', 'nova-vaga']" class="btn btn-secondary text-white">
+            Nova Vaga
+            <i class="fa fa-plus-circle fa-1x"></i>
+        </a>
+    </div>
+
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#vagas">Vagas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#concluidas">Minhas concluidas</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane container active" id="vagas">
+            <app-vaga-list [vagas]="vagas"></app-vaga-list>
+        </div>
+        <div class="tab-pane container fade" id="concluidas">
+                <app-vaga-list [vagas]="vagasConcluidas"></app-vaga-list>
+        </div>
+    </div>
 </div>
-<app-vaga-list [vagas]="vagas"></app-vaga-list>

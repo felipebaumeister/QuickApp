@@ -56,6 +56,11 @@ export class VagaService{
         .get<Vaga[]>(API + '/api/Vaga/vagas-disponiveis-empresa/' + idEmpresa);
      }
 
+     getVagasConcluidasByEmpresa(idEmpresa: string) {
+      return this.http
+      .get<Vaga[]>(API + '/api/Vaga/vagas-concluidas-empresa/' + idEmpresa);
+   }
+
      getVagaComCandidatos(idVaga: string) {
         return this.http
         .get<Candidato[]>(API + '/api/Vaga/vaga-com-candidatos/' + idVaga);
@@ -66,6 +71,11 @@ export class VagaService{
         return this.http
         .put(API + '/api/Vaga/finalizar-vaga/', finalizaVaga);
      }
+
+     getVagasConcluidasByCandidato(idCandidato: string) {
+      return this.http
+      .get<Vaga[]>(API + '/api/Vaga/vagas-concluidas-candidato/' + idCandidato);
+   }
 }
 
 

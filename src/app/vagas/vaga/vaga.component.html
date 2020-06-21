@@ -4,11 +4,11 @@
       <h5 class="card-title">{{vaga?.empresa?.nome}}</h5>
       <p class="card-text">{{vaga?.descricaoIntegra}}</p>
       <div class="text-right">
-        <button class="btn btn-success" (click)="addCandidato()" *ngIf="canditadoNaoInscrito">
+        <button class="btn btn-success" (click)="addCandidato()" *ngIf="!canditadoInscrito && canditadoLogado && !vaga.concluida">
             <i class="fa fa-handshake-o fa-1x"></i>
             Candidatar-se
         </button>
-        <button class="btn btn-secondary text-white" (click)="verCandidatos(vaga.id)" *ngIf="vagaEmpresaAtual">
+        <button class="btn btn-secondary text-white" (click)="verCandidatos(vaga.id)" *ngIf="vagaEmpresaAtual && !vaga.concluida">
             <i class="fa fa-list-alt fa-1x"></i>
             Ver candidatos
         </button>

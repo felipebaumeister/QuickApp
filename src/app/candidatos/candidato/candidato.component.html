@@ -2,4 +2,21 @@
   Candidato
 </h2>
 
-<app-vaga-list [vagas]="vagas"></app-vaga-list>
+<ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="pill" href="#vagas">Vagas</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#aprovaçoes">Minhas aprovações</a>
+    </li>
+  </ul>
+  
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane container active" id="vagas">
+        <app-vaga-list [vagas]="vagas"></app-vaga-list>
+    </div>
+    <div class="tab-pane container fade" id="aprovaçoes">
+        <app-vaga-list [vagas]="vagasAprovadas"></app-vaga-list>
+    </div>
+  </div>

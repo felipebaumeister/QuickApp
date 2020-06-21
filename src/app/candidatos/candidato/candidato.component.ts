@@ -16,7 +16,8 @@ import { Observable } from 'rxjs';
 export class CandidatoComponent implements OnInit {
 
   vagas: Vaga[] = [];
-  cadidato: Candidato;
+  vagasAprovadas: Vaga[] = [];
+  candidato: Candidato;
   user$: Observable<User>;
   
   constructor(private vagaService: VagaService,
@@ -33,12 +34,27 @@ export class CandidatoComponent implements OnInit {
       },
         err => console.error(err))
 
-        if(!this.candidatoService.exists())
+        if(!this.candidatoService.exists()){
         this.user$.subscribe((user) => {    
-          this.candidatoService.getByIdUser(user.id).subscribe((cadidado) => {
-            const newCadidado = cadidado as Candidato;
+          this.candidatoService.getByIdUser(user.id).subscribe((candidado) => {
+            const newCadidado = candidado as Candidato;
               this.candidatoService.setData(newCadidado);
+              this.candidato = newCadidado;
+              this.vagaService.getVagasConcluidasByCandidato(newCadidado.id)
+              .subscribe(vagasAprovadas => {
+                this.vagasAprovadas = vagasAprovadas;
+              },
+                err => console.error(err))
+
             }, err => console.log(err))
         })
+      }else{
+        this.candidato = this.candidatoService.getData();
+        this.vagaService.getVagasConcluidasByCandidato(this.candidato.id)
+        .subscribe(vagasAprovadas => {
+          this.vagasAprovadas = vagasAprovadas;
+        },
+          err => console.error(err))
+      }
   }
 }

@@ -16,7 +16,8 @@ export class VagaComponent implements OnInit {
 
   @Input() vaga : Vaga;
   candidato: Candidato;
-  canditadoNaoInscrito: boolean = false;
+  canditadoInscrito: boolean = false;
+  canditadoLogado: boolean = false;
   vagaEmpresaAtual: boolean = false;
   empresa: Empresa;
 
@@ -30,11 +31,12 @@ export class VagaComponent implements OnInit {
   ngOnInit() {
     this.candidato = this.candidatoService.getData();
     this.empresa = this.empresaService.getData();
-    
+    debugger
     if(!this.candidatoService.exists()){
-      this.canditadoNaoInscrito = false;
+      this.canditadoLogado = false;
     } else {
-      this.candidatoService.inscritoEmVaga(this.vaga.id, this.candidato.id).subscribe(inscrito => this.canditadoNaoInscrito = !inscrito)
+      this.canditadoLogado = true;
+      this.candidatoService.inscritoEmVaga(this.vaga.id, this.candidato.id).subscribe(inscrito => this.canditadoInscrito = inscrito)
     }
     this.vagaEmpresaAtual = this.empresaService.exists();
   }
@@ -43,6 +45,7 @@ export class VagaComponent implements OnInit {
     this.vagaService.addCandidato(this.vaga.id, this.candidato.id)
       .subscribe(vaga => {
         console.log("Inscrição realizada com sucesso")
+        this.canditadoInscrito = true;
         return this.router.navigate(['', 'candidato'])
       });
   }

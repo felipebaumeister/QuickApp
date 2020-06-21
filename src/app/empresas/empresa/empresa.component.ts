@@ -16,6 +16,7 @@ import { Empresa } from './empresa';
 export class EmpresaComponent implements OnInit {
 
   vagas: Vaga[] = [];
+  vagasConcluidas: Vaga[] = [];
   empresa: Empresa;
 
   user$: Observable<User>;
@@ -36,6 +37,7 @@ export class EmpresaComponent implements OnInit {
 
           const newEmpresa = empresa as Empresa;
           this.empresaService.setData(newEmpresa);
+          this.empresa = newEmpresa;
 
           this.vagaService.getVagasDisponiveisByEmpresa(empresa.id)
           .subscribe(vagasDisponiveis => {
@@ -43,6 +45,13 @@ export class EmpresaComponent implements OnInit {
             this.vagas = vagasDisponiveis;
           },
             err => console.error(err))
+            
+            this.vagaService.getVagasConcluidasByEmpresa(this.empresa.id)
+            .subscribe(vagasConcluidas => {
+    
+              this.vagasConcluidas = vagasConcluidas;
+            },
+              err => console.error(err))
 
         }, err => console.log(err))
 
@@ -55,6 +64,13 @@ export class EmpresaComponent implements OnInit {
           this.vagas = vagasDisponiveis;
         },
           err => console.error(err))
+
+          this.vagaService.getVagasConcluidasByEmpresa(this.empresa.id)
+          .subscribe(vagasConcluidas => {
+  
+            this.vagasConcluidas = vagasConcluidas;
+          },
+            err => console.error(err))
     }
 
   }

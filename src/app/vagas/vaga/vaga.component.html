@@ -1,14 +1,11 @@
-<div class="row">
-  <div class="col-sm-8">
-  <h2>{{descricao}}</h2>
-  <h5>{{empresaNome}}</h5>
-    <!-- <div class="fakeimg">Fake Image</div> -->
-    <p>Some text..</p>
-  <p>{{descricaoIntegra}}</p>
-  <div class="col-6">
-      <a>
-          New Vaga
-          <i class="fa fa-plus-circle fa-2x"></i>
-      </a>
+<div class="card mt-2">
+    <h5 class="card-header">{{vaga?.descricao}}</h5>
+    <div class="card-body">
+      <h5 class="card-title">{{vaga?.empresa?.nome}}</h5>
+      <p class="card-text">{{vaga?.descricaoIntegra}}</p>
+      <button class="btn btn-success" (click)="addCandidato()" *ngIf="canditadoNaoCadastrado">
+          <i class="fa fa-handshake-o fa-1x"></i>
+          Candidatar-se
+      </button>
+    </div>
   </div>
-</div>

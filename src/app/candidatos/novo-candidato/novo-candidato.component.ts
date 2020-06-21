@@ -21,18 +21,18 @@ export class NovoCandidatoComponent implements OnInit {
   ocupacoes: Ocupacao[];
   idOcupacao: string;
 
- 
+
   constructor(private ocupacaoService: OcupacaoService,
     private formBuilder: FormBuilder,
     private router: Router,
     private candidatoService: CandidatoService,
-    private userService: UserService) { 
-      this.user$ = userService.getUser();
-    }
+    private userService: UserService) {
+    this.user$ = userService.getUser();
+  }
 
   ngOnInit() {
 
-    this.ocupacaoService.listAll().subscribe((ocupacoes) => { 
+    this.ocupacaoService.listAll().subscribe((ocupacoes) => {
       this.ocupacoes = ocupacoes;
       this.idOcupacao = ocupacoes[0].id;
     });
@@ -65,7 +65,7 @@ export class NovoCandidatoComponent implements OnInit {
       dataNascimento: ['1991-02-02', [
         Validators.required
       ]],
-      idOcupacao : ['']
+      idOcupacao: ['']
     });
   }
 
@@ -83,11 +83,10 @@ export class NovoCandidatoComponent implements OnInit {
     this.user$.subscribe((user) => {
 
       novoCandidato.idUsuario = user.id;
-      
+
       this.candidatoService
         .add(novoCandidato).subscribe(() => {
-          this.candidatoService.setData(novoCandidato);
-          this.router.navigate(['','candidato'])
+          this.router.navigate(['', 'candidato'])
         }, err => console.log(err))
     })
 

@@ -1,6 +1,6 @@
 <h4 class="text-center"> Cadastrar Candidato </h4>
 
-<form class="form mt-4" [formGroup]="vagaForm" (ngSubmit)="addCandidato()">
+<form class="form mt-4" [formGroup]="vagaForm" (ngSubmit)="addVaga()">
   <div class="form-group">
     <select formControlName="idOcupacao" placeholder="Ocupação" class="form-control" (change)="selectOption($event.target.value)" >
       <option *ngFor="let option of ocupacoes; index as i" [value]="option.id" [selected]="ocupacoes[0]">

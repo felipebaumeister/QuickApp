@@ -1,6 +1,8 @@
+import { VagaCandidato } from './../../candidatos/vaga-candidato/vaga-candidato';
 import { Vaga } from './vaga';
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { VagaSearch } from './vaga-search';
 
 const API = 'https://localhost:44343';
 
@@ -30,6 +32,21 @@ export class VagaService{
         console.log(vaga);
     
         return this.http.post(API + '/api/Vaga', vaga)
+     }
+
+     addCandidato(idVaga: string, idCandidato: string){
+         debugger;
+         const vagaCandidato = {idVaga : idVaga, idCandidato : idCandidato} as VagaCandidato;
+         return this.http.post(API + '/api/VagaCandidato', vagaCandidato)
+     }
+
+     getVagasDisponiveis() {
+        return this.http
+        .get<Vaga[]>(API + '/api/Vaga/vagas-disponiveis');
+     }
+
+     listFromVagaSearch(vagaSearch: VagaSearch) {
+        return this.http.post<Vaga[]>(API + '/api/Vaga/vagas-by-filter', vagaSearch);
      }
 }
 

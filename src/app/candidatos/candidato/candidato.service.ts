@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -16,6 +17,10 @@ export class CandidatoService  {
      console.log(candidato);
  
      return this.http.post(API + '/api/Candidato', candidato)
+  }
+
+  getByIdUser  (idUsuario:string)  {
+    return this.http.get(API + '/api/Candidato/get-by-user/' + idUsuario)
   }
 
   setData(candidato: Candidato){

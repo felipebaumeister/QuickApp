@@ -8,11 +8,11 @@ import { Vaga } from '../vaga/vaga';
 @Injectable({ providedIn: 'root'})
 export class VagaListResolver implements Resolve<Observable<Vaga[]>>{
 
-    constructor(private service: VagaService) {}
+    constructor(private vagaService: VagaService) {}
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : Observable<Vaga[]> {
       //  const userName = route.params.userName;
-        return this.service.listFromFilter();
+        return this.vagaService.listFromFilter();
     }
 
 }

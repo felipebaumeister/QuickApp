@@ -1,1 +1,27 @@
+
+<div class="card col-12">
+    <h5 class="card-header">Buscar Vagas</h5>
+    <div class="card-body">
+
+        <form class="form mt-4" [formGroup]="vagaFiltroForm" (ngSubmit)="buscasVagas()">
+
+            <div class="row">
+                <div class="form-group col-4">
+                    <input formControlName="titulo" placeholder="Titulo" class="form-control" />
+                </div>
+                <div class="form-group col-4">
+                    <input formControlName="descricao" placeholder="Descricão Integra" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 text-right">
+                    <button [disabled]="vagaFiltroForm.invalid || vagaFiltroForm.pending"
+                        class="btn btn-primary" type="submit">Buscar</button>
+                    <button class="btn btn-danger" type="button" (click)="limpar()">Limpar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
 <app-vagas [vagas]="vagas"></app-vagas>

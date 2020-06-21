@@ -51,12 +51,12 @@ export class NovaVagaComponent implements OnInit {
   }
 
   
-  addCandidato() {
+  addVaga() {
 
     const novaVaga = this.vagaForm.getRawValue() as Vaga;
     novaVaga.idCupacao = this.idOcupacao;
     novaVaga.idEmpresa = this.empresa.id;
-      debugger
+
       this.vagaService
         .add(novaVaga).subscribe(() => {
 

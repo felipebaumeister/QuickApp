@@ -1,3 +1,4 @@
+import { VagaService } from './../../vagas/vaga/vaga.service';
 import { Vaga } from './../../vagas/vaga/vaga';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,10 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class IndexComponent implements OnInit {
 
   vagas: Vaga[] = [];
-  
-  constructor() { }
+
+  constructor(private vagaService: VagaService) { }
 
   ngOnInit() {
+
+    this.vagaService.getVagasDisponiveis()
+    .subscribe(vagas => this.vagas = vagas)
+
   }
 
 }

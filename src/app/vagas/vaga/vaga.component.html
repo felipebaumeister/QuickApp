@@ -4,7 +4,7 @@
       <h5 class="card-title">{{vaga?.empresa?.nome}}</h5>
       <p class="card-text">{{vaga?.descricaoIntegra}}</p>
       <div class="text-right">
-        <button class="btn btn-success" (click)="addCandidato()" *ngIf="canditadoNaoCadastrado">
+        <button class="btn btn-success" (click)="addCandidato()" *ngIf="canditadoNaoInscrito">
             <i class="fa fa-handshake-o fa-1x"></i>
             Candidatar-se
         </button>

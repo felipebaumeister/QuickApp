@@ -36,6 +36,14 @@ export class EmpresaComponent implements OnInit {
 
           const newEmpresa = empresa as Empresa;
           this.empresaService.setData(newEmpresa);
+
+          this.vagaService.getVagasDisponiveisByEmpresa(empresa.id)
+          .subscribe(vagasDisponiveis => {
+  
+            this.vagas = vagasDisponiveis;
+          },
+            err => console.error(err))
+
         }, err => console.log(err))
 
       })

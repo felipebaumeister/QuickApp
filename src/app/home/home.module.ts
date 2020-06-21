@@ -1,3 +1,4 @@
+import { VagaListModule } from './../vagas/vaga-list/vaga-list.module';
 import { IndexComponent } from './index/index.component';
 import { CandidatosModule } from './../candidatos/candidatos.module';
 
@@ -25,7 +26,7 @@ import { EmpresasModule } from '../empresas/empresas.module';
     HomeRoutingModule,
     EmpresasModule,
     CandidatosModule,
-
+    VagaListModule
   ],
   declarations: [
     LoginComponent,

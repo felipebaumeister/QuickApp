@@ -38,4 +38,10 @@ export class CandidatoService  {
   removeData(){
     window.localStorage.removeItem(KEY)
   }
+
+  inscritoEmVaga(idVaga: string, idCandidato: string){
+    debugger
+    return this.http
+    .get<boolean>(API + '/api/VagaCandidato/inscrito-em-vaga/' + idVaga + '/' + idCandidato);
+ }
 }

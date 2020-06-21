@@ -16,7 +16,7 @@ export class VagaComponent implements OnInit {
 
   @Input() vaga : Vaga;
   candidato: Candidato;
-  canditadoNaoCadastrado: boolean = false;
+  canditadoNaoInscrito: boolean = false;
   vagaEmpresaAtual: boolean = false;
   empresa: Empresa;
 
@@ -30,7 +30,12 @@ export class VagaComponent implements OnInit {
   ngOnInit() {
     this.candidato = this.candidatoService.getData();
     this.empresa = this.empresaService.getData();
-    this.canditadoNaoCadastrado = this.candidatoService.exists();
+    
+    if(!this.candidatoService.exists()){
+      this.canditadoNaoInscrito = false;
+    } else {
+      this.candidatoService.inscritoEmVaga(this.vaga.id, this.candidato.id).subscribe(inscrito => this.canditadoNaoInscrito = !inscrito)
+    }
     this.vagaEmpresaAtual = this.empresaService.exists();
   }
 

@@ -4,6 +4,7 @@ import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { VagaSearch } from './vaga-search';
 import { Candidato } from 'src/app/candidatos/candidato/candidato';
+import { FinalizaVaga } from './finaliza-vaga';
 
 const API = 'https://localhost:44343';
 
@@ -58,6 +59,12 @@ export class VagaService{
      getVagaComCandidatos(idVaga: string) {
         return this.http
         .get<Candidato[]>(API + '/api/Vaga/vaga-com-candidatos/' + idVaga);
+     }
+
+     finalizarVaga(idCandidato: string, idVaga: string) {
+        const finalizaVaga = {idCandidato : idCandidato, idVaga: idVaga} as FinalizaVaga;
+        return this.http
+        .put(API + '/api/Vaga/finalizar-vaga/', finalizaVaga);
      }
 }
 

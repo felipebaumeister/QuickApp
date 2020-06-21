@@ -1,3 +1,4 @@
+import { Vaga } from './../../vagas/vaga/vaga';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
+  vagas: Vaga[] = [];
+  
   constructor() { }
 
   ngOnInit() {

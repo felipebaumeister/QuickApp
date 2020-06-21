@@ -24,7 +24,7 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         children: [
             {
-                path: 'index',
+                path: '',
                 component: IndexComponent
             },
             {

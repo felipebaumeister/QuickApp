@@ -1,7 +1,7 @@
 import { VagaService } from './../../vagas/vaga/vaga.service';
 import { Component, OnInit } from '@angular/core';
 import { Candidato } from '../candidato/candidato';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -15,7 +15,8 @@ export class CandidatoVagaListComponent implements OnInit {
   idVaga: string = '';
 
   constructor(private activatedRoute: ActivatedRoute,
-    private vagaService: VagaService) { }
+    private vagaService: VagaService,
+    private router: Router) { }
 
   ngOnInit() {
     debugger
@@ -28,7 +29,8 @@ export class CandidatoVagaListComponent implements OnInit {
   }
 
   aprovarCandidato(idCandidato: string) {
-      
+    this.vagaService.finalizarVaga(idCandidato, this.idVaga)
+    .subscribe(() =>  this.router.navigate(['', 'empregador']))
   }
 
 }

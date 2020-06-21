@@ -16,7 +16,8 @@ import { RouterModule } from '@angular/router';
     RouterModule
     
   ],
-  declarations: [NovaVagaComponent, 
+  declarations: [
+    NovaVagaComponent, 
     NovaVagaComponent],
   exports: [NovaVagaComponent]
 

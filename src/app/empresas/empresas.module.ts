@@ -1,3 +1,4 @@
+import { VagaListModule } from './../vagas/vaga-list/vaga-list.module';
 import { EmpresaService } from './empresa/empresa.service';
 import { NovoCandidatoComponent } from './../candidatos/novo-candidato/novo-candidato.component';
 import { NgModule } from '@angular/core';
@@ -8,13 +9,15 @@ import { NovaEmpresaComponent } from './nova-empresa/nova-empresa.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VmessageModule } from '../shared/components/vmessage/vmessage.module';
 import { RouterModule } from '@angular/router';
+import { VagasModule } from '../vagas/vagas.module';
 
 @NgModule({
   imports: [
     CommonModule,  
     ReactiveFormsModule,
     VmessageModule,
-    RouterModule
+    RouterModule,
+    VagaListModule
   ],
   declarations: [
     EmpresaComponent,

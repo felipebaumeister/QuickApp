@@ -1,9 +1,10 @@
-<p>
-  empresa works!
-</p>
+<h2>
+    Candidato
+  </h2>
 <div class="col-6">
     <a [routerLink]="['', 'nova-vaga']">
         New Vaga
         <i class="fa fa-plus-circle fa-2x"></i>
     </a>
 </div>
+<app-vaga-list [vagas]="vagas"></app-vaga-list>

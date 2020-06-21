@@ -48,6 +48,11 @@ export class VagaService{
      listFromVagaSearch(vagaSearch: VagaSearch) {
         return this.http.post<Vaga[]>(API + '/api/Vaga/vagas-by-filter', vagaSearch);
      }
+
+     getVagasDisponiveisByEmpresa(idEmpresa: string) {
+        return this.http
+        .get<Vaga[]>(API + '/api/Vaga/vagas-disponiveis-empresa/' + idEmpresa);
+     }
 }
 
 

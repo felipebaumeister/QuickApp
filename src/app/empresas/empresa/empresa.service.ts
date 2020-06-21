@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import { Empresa } from './empresa';
 
@@ -17,6 +17,11 @@ export class EmpresaService  {
      return this.http.post(API + '/api/Empresa', empresa)
   }
 
+  getByIdUser  (idUsuario:string)  {
+    return this.http.get<Empresa>(API + '/api/Empresa/get-by-user/' + idUsuario)
+  }
+
+
   setData(empresa: Empresa){
     window.localStorage.setItem(KEY, JSON.stringify(empresa))
   }
@@ -32,4 +37,6 @@ export class EmpresaService  {
   removeData(){
     window.localStorage.removeItem(KEY)
   }
+
+
 }

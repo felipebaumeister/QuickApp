@@ -33,6 +33,7 @@ export class CandidatoComponent implements OnInit {
       },
         err => console.error(err))
 
+        if(!this.candidatoService.exists())
         this.user$.subscribe((user) => {    
           this.candidatoService.getByIdUser(user.id).subscribe((cadidado) => {
             const newCadidado = cadidado as Candidato;

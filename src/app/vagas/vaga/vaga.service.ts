@@ -3,6 +3,7 @@ import { Vaga } from './vaga';
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { VagaSearch } from './vaga-search';
+import { Candidato } from 'src/app/candidatos/candidato/candidato';
 
 const API = 'https://localhost:44343';
 
@@ -52,6 +53,11 @@ export class VagaService{
      getVagasDisponiveisByEmpresa(idEmpresa: string) {
         return this.http
         .get<Vaga[]>(API + '/api/Vaga/vagas-disponiveis-empresa/' + idEmpresa);
+     }
+
+     getVagaComCandidatos(idVaga: string) {
+        return this.http
+        .get<Candidato[]>(API + '/api/Vaga/vaga-com-candidatos/' + idVaga);
      }
 }
 

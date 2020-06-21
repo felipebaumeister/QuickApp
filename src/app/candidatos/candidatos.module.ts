@@ -9,6 +9,7 @@ import { VmessageModule } from '../shared/components/vmessage/vmessage.module';
 import { RouterModule } from '@angular/router';
 import { CandidatoService } from './candidato/candidato.service';
 import { VagaListModule } from '../vagas/vaga-list/vaga-list.module';
+import { CandidatoVagaListModule } from './candidato-vaga-list/candidato-vaga-list.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { VagaListModule } from '../vagas/vaga-list/vaga-list.module';
     ReactiveFormsModule,
     VmessageModule,
     RouterModule,
-    VagaListModule
+    VagaListModule,
+    CandidatoVagaListModule
   ],
   declarations: [
     CandidatoComponent, 

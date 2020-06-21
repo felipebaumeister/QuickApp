@@ -1,0 +1,33 @@
+<h3>
+  Candidatos inscritos
+</h3>
+<p class="text-center text-muted mt-4" *ngIf="candidatos && !candidatos.length">
+    Nenhum candidato inscrito.
+ </p>
+<div id="accordion">
+
+    <div class="card"  *ngFor="let candidato of candidatos; index as i">
+      <div class="card-header">
+      <a class="card-link" data-toggle="collapse" href="#collapse{{i}}">
+            {{candidato?.nome}}
+        </a>
+      </div>
+      <div id="collapse{{i}}" class="collapse show" data-parent="#accordion">
+        <div class="card-body">
+          <div class="row">
+              <div class="col-12">
+                 Descrição
+                </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                <button class="btn btn-success" (click)="aprovarCandidato(candidato.id)">
+                    <i class="fa fa-gavel fa-1x"></i>
+                  Aprovar 
+                </button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

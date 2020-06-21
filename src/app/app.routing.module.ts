@@ -1,3 +1,4 @@
+import { CandidatoVagaListComponent } from './candidatos/candidato-vaga-list/candidato-vaga-list.component';
 import { NovaVagaComponent } from './vagas/nova-vaga/nova-vaga.component';
 import { CandidatoComponent } from './candidatos/candidato/candidato.component';
 
@@ -32,6 +33,10 @@ const routes: Routes = [
         path: 'nova-vaga',
         component: NovaVagaComponent
     },
+     {
+        path: 'candidatos-vaga/:idVaga',
+        component: CandidatoVagaListComponent
+     },
     {
         path: 'vagas', component: VagaListComponent,
         resolve: {

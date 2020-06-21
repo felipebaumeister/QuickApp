@@ -1,3 +1,4 @@
+import { VagaCandidato } from './../../candidatos/vaga-candidato/vaga-candidato';
 import { Ocupacao } from './../../ocupacao/ocupacao';
 import { Empresa } from './../../empresas/empresa/empresa';
 
@@ -13,6 +14,7 @@ dataAtualizacao: string;
 empresa : Empresa;
 idCupacao: string;
 ocupacao: Ocupacao;
+vagasCandidato: VagaCandidato[]
 
     // Id { get; set; }
     // public string Descricao { get; set; }

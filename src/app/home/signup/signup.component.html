@@ -11,31 +11,6 @@
     </app-vmessage>
     <small *ngIf="signupForm.get('email').valid" class="text-success">Email disponivel</small>
   </div>
-
-  <!-- <div class="form-group">
-    <input formControlName="userName" placeholder="Nome" class="form-control">
-    <app-vmessage *ngIf="signupForm.get('userName').errors?.required" text="Nome é obrogatório!">
-    </app-vmessage>
-    <app-vmessage *ngIf="signupForm.get('userName').errors?.minlength" text="minlength 2!">
-    </app-vmessage>
-    <app-vmessage *ngIf="signupForm.get('userName').errors?.maxlength" text="minlength 40!">
-    </app-vmessage>
- <app-vmessage *ngIf="signupForm.get('userName').errors?.lowerCase" text="Contém maiuscula">
-    </app-vmessage>
-
-  </div> -->
-
-  <!-- <div class="form-group">
-    <input formControlName="fullName" placeholder="Sobre nome" class="form-control">
-    <app-vmessage *ngIf="signupForm.get('fullName').errors?.required" text="Sobrenome é obrogatório!">
-    </app-vmessage>
-    <app-vmessage *ngIf="signupForm.get('fullName').errors?.minlength" text="minlength 2!">
-    </app-vmessage>
-    <app-vmessage *ngIf="signupForm.get('fullName').errors?.maxlength" text="minlength 30!">
-    </app-vmessage>
-
-  </div> -->
-
   <div class="form-group">
     <input formControlName="password" type="password" placeholder="Senha" class="form-control">
     <app-vmessage *ngIf="signupForm.get('password').errors?.required" text="Senha é obrigatória!">
@@ -48,5 +23,5 @@
 
   <button [disabled]="signupForm.invalid || signupForm.pending" class="btn btn-primary btn-block">Register</button>
 
-  <p>Already a user?<a [routerLink]="['/home/login']">Sign In!</a></p>
+  <p>Já possui Usuário?<a [routerLink]="['/home/login']">Fazer Login!</a></p>
 </form>

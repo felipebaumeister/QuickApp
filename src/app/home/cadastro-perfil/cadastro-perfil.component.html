@@ -17,8 +17,6 @@
          [checked]="i === 0">
         <label [for]="pf">{{pf}}</label>
     </div>
-    <label for="perfil"><b>Perfil: </b> </label>
-    <div id="perfil">{{perfil}}</div>
 </div>
 <app-novo-candidato *ngIf="perfil === 'candidato'"></app-novo-candidato>
 <app-nova-empresa *ngIf="perfil === 'empresa'"></app-nova-empresa>

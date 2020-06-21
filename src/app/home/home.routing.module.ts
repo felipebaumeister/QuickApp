@@ -1,3 +1,4 @@
+import { IndexComponent } from './index/index.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 
@@ -20,8 +21,12 @@ const routes: Routes = [
     {
         path: '',
         component: HomeComponent,
-   //     canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         children: [
+            {
+                path: 'index',
+                component: IndexComponent
+            },
             {
                 path: 'login',
                 component: LoginComponent

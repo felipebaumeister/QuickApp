@@ -46,10 +46,15 @@ export class LoginComponent implements OnInit {
         this.user$.subscribe(user => {
           console.log("user")
           console.log(user)
-          if(user && user.statusCadasto && user.statusCadasto === 'completo')
-          return this.router.navigate(['/vagas'])
+          if(user && user.statusCadasto && user.statusCadasto === 'completo'){
+               if(user.perfilLogado && user.perfilLogado === 'candidato'){
+                return this.router.navigate(['','candidato'])
+               }else {
+                return this.router.navigate(['','empregador'])
+               }
+          }
           else
-          return this.router.navigate(['/home/cadastro-perfil'])
+          return this.router.navigate(['/home','cadastro-perfil'])
         })
       
         }, 

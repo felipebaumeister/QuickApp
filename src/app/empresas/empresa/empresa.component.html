@@ -1,10 +1,11 @@
 <h2>
-    Candidato
-  </h2>
-<div class="col-6">
-    <a [routerLink]="['', 'nova-vaga']">
-        New Vaga
-        <i class="fa fa-plus-circle fa-2x"></i>
+    Area Empregador
+</h2>
+<hr />
+<div class="col-6 mb-3">
+    <a [routerLink]="['', 'nova-vaga']" class="btn btn-secondary text-white">
+        Nova Vaga
+        <i class="fa fa-plus-circle fa-1x"></i>
     </a>
 </div>
 <app-vaga-list [vagas]="vagas"></app-vaga-list>

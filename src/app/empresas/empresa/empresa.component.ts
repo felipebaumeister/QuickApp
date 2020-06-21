@@ -29,8 +29,6 @@ export class EmpresaComponent implements OnInit {
 
   ngOnInit() {
 
-
-
     if (!this.empresaService.exists()) {
       this.user$.subscribe((user) => {
 
@@ -45,7 +43,7 @@ export class EmpresaComponent implements OnInit {
       this.empresa = this.empresaService.getData();
       this.vagaService.getVagasDisponiveisByEmpresa(this.empresa.id)
         .subscribe(vagasDisponiveis => {
-          
+
           this.vagas = vagasDisponiveis;
         },
           err => console.error(err))

@@ -1,3 +1,4 @@
+import { IndexComponent } from './index/index.component';
 import { CandidatosModule } from './../candidatos/candidatos.module';
 
 import { SignupService } from './signup/signup.service';
@@ -23,14 +24,16 @@ import { EmpresasModule } from '../empresas/empresas.module';
     RouterModule,
     HomeRoutingModule,
     EmpresasModule,
-    CandidatosModule
+    CandidatosModule,
+
   ],
   declarations: [
     LoginComponent,
      SignupComponent,
       ConfirmarEmailComponent, 
       CadastroPerfilComponent,
-      HomeComponent
+      HomeComponent,
+      IndexComponent
     ],
     providers : [
       SignupService

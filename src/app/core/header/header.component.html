@@ -1,10 +1,10 @@
-<header class="fixed-top">
+<header class="fixed-top" style="border-bottom: 1px solid #ddd;">
   <nav class="navbar navbar-light bg-white">
       <a class="navbar-brand">QuickJobs</a>
       <div *ngIf="(user$ | async) as user; else login">
           <i class="fa fa-user-circle mr-1"></i>
-      <a class="mr-1">{{ user.name}}</a>
-      <a (click)="logOut()">(Logout)</a>
+      <a class="mr-1 mr-5">{{ user.name}}</a>
+      <a (click)="logOut()" class="btn btn-secondary text-white">Logout</a>
       </div>
       <ng-template #login>
         <span class="navbar-text">

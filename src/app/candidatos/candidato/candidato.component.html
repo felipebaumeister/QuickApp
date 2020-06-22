@@ -1,8 +1,10 @@
+<div class="container">
 <h2>
   Candidato
 </h2>
+<hr />
 
-<ul class="nav nav-pills">
+<ul class="nav nav-tabs">
     <li class="nav-item">
       <a class="nav-link active" data-toggle="pill" href="#vagas">Vagas</a>
     </li>
@@ -10,6 +12,8 @@
       <a class="nav-link" data-toggle="pill" href="#aprovaçoes">Minhas aprovações</a>
     </li>
   </ul>
+
+  <hr />
   
   <!-- Tab panes -->
   <div class="tab-content">
@@ -20,3 +24,4 @@
         <app-vaga-list [vagas]="vagasAprovadas"></app-vaga-list>
     </div>
   </div>
+</div>

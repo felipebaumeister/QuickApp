@@ -1,17 +1,46 @@
 <div class="card mt-2">
-    <h5 class="card-header">{{vaga?.titulo}}</h5>
-    <div class="card-body">
-      <h5 class="card-title">{{vaga?.empresa?.nome}}</h5>
-      <p class="card-text">{{vaga?.descricaoIntegra}}</p>
-      <div class="text-right">
-        <button class="btn btn-success" (click)="addCandidato()" *ngIf="!canditadoInscrito && canditadoLogado && !vaga.concluida">
-            <i class="fa fa-handshake-o fa-1x"></i>
-            Candidatar-se
-        </button>
-        <button class="btn btn-secondary text-white" (click)="verCandidatos(vaga.id)" *ngIf="vagaEmpresaAtual && !vaga.concluida">
-            <i class="fa fa-list-alt fa-1x"></i>
-            Ver candidatos
-        </button>
-      </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ vaga?.titulo }}
+      <span class="badge badge-light" style="font-style: oblique; font-weight: 300;">
+
+        Publicada em: {{vaga?.dataCriacao}}
+
+      </span>
+    </h5>
+    <h6 class="card-title">{{vaga?.empresa?.nome}}
+      <span class="badge badge-info">
+        <i class="fa fa-thumbs-o-up fa-1x"></i>
+        23
+      </span>&nbsp;
+      <span class="badge badge-danger ml1">
+        <i class="fa fa-thumbs-o-down"></i> 
+        4
+      </span>
+    </h6>
+    <h6 class="card-title" style="font-style: italic; font-weight: 300;">
+      {{vaga?.cidade}} - {{vaga?.estado}}
+    </h6>
+    <hr />
+    <p class="card-text">{{vaga?.descricaoIntegra}}</p>
+  <hr />
+    <p class="card-text">
+      <b>Data Inicio: </b> {{vaga?.dataInicio}} | <b>Data Fim: </b> {{vaga?.dataFim}} </p>
+
+      <p class="card-text">
+          <b>Tipo: </b> {{vaga?.tipoContratacao}} <span class="badge badge-warning"> {{vaga?.duracao}} </span> </p>
+          <p class="card-text">
+              <b>Valor: </b> R$ {{vaga?.valor}}  <span class="badge badge-warning"> {{vaga?.tipoContratacao}} </span></p>
+    <div class="text-right">
+      <button class="btn btn-success" (click)="addCandidato()"
+        *ngIf="!canditadoInscrito && canditadoLogado && !vaga.concluida">
+        <i class="fa fa-handshake-o fa-1x"></i>
+        Candidatar-se
+      </button>
+      <button class="btn btn-secondary text-white" (click)="verCandidatos(vaga.id)"
+        *ngIf="vagaEmpresaAtual && !vaga.concluida">
+        <i class="fa fa-list-alt fa-1x"></i>
+        Ver candidatos
+      </button>
     </div>
   </div>
+</div>

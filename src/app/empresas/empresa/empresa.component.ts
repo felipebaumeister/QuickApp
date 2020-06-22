@@ -57,20 +57,45 @@ export class EmpresaComponent implements OnInit {
 
       })
     } else {
-      this.empresa = this.empresaService.getData();
-      this.vagaService.getVagasDisponiveisByEmpresa(this.empresa.id)
-        .subscribe(vagasDisponiveis => {
+      this.user$.subscribe((user) => {
 
-          this.vagas = vagasDisponiveis;
-        },
-          err => console.error(err))
+        this.empresaService.getByIdUser(user.id).subscribe((empresa) => {
 
-          this.vagaService.getVagasConcluidasByEmpresa(this.empresa.id)
-          .subscribe(vagasConcluidas => {
+          const newEmpresa = empresa as Empresa;
+          this.empresaService.setData(newEmpresa);
+          this.empresa = newEmpresa;
+
+          this.vagaService.getVagasDisponiveisByEmpresa(empresa.id)
+          .subscribe(vagasDisponiveis => {
   
-            this.vagasConcluidas = vagasConcluidas;
+            this.vagas = vagasDisponiveis;
           },
             err => console.error(err))
+            
+            this.vagaService.getVagasConcluidasByEmpresa(this.empresa.id)
+            .subscribe(vagasConcluidas => {
+    
+              this.vagasConcluidas = vagasConcluidas;
+            },
+              err => console.error(err))
+
+        }, err => console.log(err))
+
+      })
+      // this.empresa = this.empresaService.getData();
+      // this.vagaService.getVagasDisponiveisByEmpresa(this.empresa.id)
+      //   .subscribe(vagasDisponiveis => {
+
+      //     this.vagas = vagasDisponiveis;
+      //   },
+      //     err => console.error(err))
+
+      //     this.vagaService.getVagasConcluidasByEmpresa(this.empresa.id)
+      //     .subscribe(vagasConcluidas => {
+  
+      //       this.vagasConcluidas = vagasConcluidas;
+      //     },
+      //       err => console.error(err))
     }
 
   }

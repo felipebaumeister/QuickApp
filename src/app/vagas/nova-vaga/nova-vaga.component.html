@@ -2,25 +2,60 @@
 
 <form class="form mt-4" [formGroup]="vagaForm" (ngSubmit)="addVaga()">
   <div class="form-group">
-    <select formControlName="idOcupacao" placeholder="Ocupação" class="form-control" (change)="selectOption($event.target.value)" >
+    <select formControlName="idCupacao" placeholder="Ocupação" class="form-control" (change)="selectOption($event.target.value)" >
       <option *ngFor="let option of ocupacoes; index as i" [value]="option.id" [selected]="ocupacoes[0]">
         {{ option.name }}
       </option>
     </select>
-    <app-vmessage *ngIf="vagaForm.get('idOcupacao').errors?.required" text="O Ocupação é obrogatório!">
+    <app-vmessage *ngIf="vagaForm.get('idCupacao').errors?.required" text="O Ocupação é obrogatório!">
       </app-vmessage>
   </div>
   <div class="form-group">
-    <input formControlName="descricao" placeholder="Descricao" class="form-control" />
-    <app-vmessage *ngIf="vagaForm.get('descricao').errors?.required" text="O Descrição é obrogatório!">
+    <input formControlName="titulo" placeholder="Titulo" class="form-control" />
+    <app-vmessage *ngIf="vagaForm.get('titulo').errors?.required" text="O titulo é obrogatório!">
     </app-vmessage>
   </div>
   <div class="form-group">
-      <input formControlName="descricaoIntegra" placeholder="Descricao" class="form-control" />
-      <app-vmessage *ngIf="vagaForm.get('descricaoIntegra').errors?.required" text="O descricaoIntegra é obrogatório!">
+      <input formControlName="descricaoIntegra" placeholder="Descrição" class="form-control" />
+      <app-vmessage *ngIf="vagaForm.get('descricaoIntegra').errors?.required" text="O descrição é obrogatório!">
       </app-vmessage>
     </div>
-  
+    <div class="form-group">
+        <input formControlName="tipoContratacao" placeholder="Tipo Contratação (Mês, Dia, Horas ...)" class="form-control" />
+        <app-vmessage *ngIf="vagaForm.get('tipoContratacao').errors?.required" text="O Tipo Contratação é obrogatório!">
+        </app-vmessage>
+      </div>
+      <div class="form-group">
+          <input formControlName="duracao" placeholder="Duração  (Quantidade: Mês, Dia, Horas ...)" class="form-control" />
+          <app-vmessage *ngIf="vagaForm.get('duracao').errors?.required" text="Duração é obrigatória!">
+          </app-vmessage>
+        </div>
+        <div class="form-group">
+            <input formControlName="valor" placeholder="Valor R$" class="form-control" />
+            <app-vmessage *ngIf="vagaForm.get('valor').errors?.required" text="O Valor é obrigatório!">
+            </app-vmessage>
+          </div>
+          <div class="form-group">
+              <input formControlName="dataInicio" placeholder="Data Inicio" class="form-control" />
+              <app-vmessage *ngIf="vagaForm.get('dataInicio').errors?.required" text="Data Inicio é obrigatória!">
+              </app-vmessage>
+            </div>
+            <div class="form-group">
+                <input formControlName="dataFim" placeholder="Data Fim" class="form-control" />
+                <app-vmessage *ngIf="vagaForm.get('dataFim').errors?.required" text="Data Fim é obrigatória!">
+                </app-vmessage>
+              </div>
+
+              <div class="form-group">
+                  <input formControlName="cidade" placeholder="Cidate" class="form-control" />
+                  <app-vmessage *ngIf="vagaForm.get('cidade').errors?.required" text="Cidade é obrigatória!">
+                  </app-vmessage>
+                </div>
+                <div class="form-group">
+                    <input formControlName="estado" placeholder="Estado" class="form-control" />
+                    <app-vmessage *ngIf="vagaForm.get('estado').errors?.required" text="O Estado é obrigatória!">
+                    </app-vmessage>
+                  </div>
 
   <button [disabled]="vagaForm.invalid || vagaForm.pending" class="btn btn-primary btn-block">Salvar</button>
   <button class="btn btn-danger btn-block">Linpar</button>

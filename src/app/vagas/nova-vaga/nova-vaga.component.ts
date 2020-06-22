@@ -35,14 +35,21 @@ export class NovaVagaComponent implements OnInit {
     this.empresa = this.empresaService.getData();
 
     this.vagaForm = this.formBuilder.group({
-      descricao: [`Descricao ${new Date().valueOf()}`, [
+      titulo: [``, [
         Validators.required
       ]],
-      descricaoIntegra: [`Descricao ${new Date().valueOf()}`, [
+      descricaoIntegra: [``, [
         Validators.required
       ]],
+      idCupacao : [''],
 
-      idOcupacao : ['']
+      tipoContratacao: [''],
+      duracao: [''],
+      valor: [''],
+      dataInicio: [''],
+      dataFim: [''],
+      cidade: [''],
+      estado: [''],
     });
   }
 

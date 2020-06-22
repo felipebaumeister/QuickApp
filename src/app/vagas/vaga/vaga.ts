@@ -12,7 +12,7 @@ idCandidatoAprovado: string;
 dataCriacao: string;
 dataAtualizacao: string;
 empresa : Empresa;
-idCupacao: string;
+idOcupacao: string;
 ocupacao: Ocupacao;
 vagasCandidato: VagaCandidato[]
 tipoContratacao: string;

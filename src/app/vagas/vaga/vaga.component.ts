@@ -1,6 +1,6 @@
 import { EmpresaService } from './../../empresas/empresa/empresa.service';
 import { VagaService } from './vaga.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { Vaga } from './vaga';
 import { CandidatoService } from 'src/app/candidatos/candidato/candidato.service';
@@ -14,7 +14,7 @@ import { Empresa } from 'src/app/empresas/empresa/empresa';
 })
 export class VagaComponent implements OnInit {
 
-  @Input() vaga : Vaga;
+  @Input() vaga: Vaga;
   candidato: Candidato;
   canditadoInscrito: boolean = false;
   canditadoLogado: boolean = false;
@@ -24,20 +24,20 @@ export class VagaComponent implements OnInit {
   constructor(private vagaService: VagaService,
     private router: Router,
     private candidatoService: CandidatoService,
-    private empresaService: EmpresaService) { 
-     
-    }
+    private empresaService: EmpresaService) {
+
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.vaga)
+     this.verificaCandidato();
+  }
 
   ngOnInit() {
     this.candidato = this.candidatoService.getData();
     this.empresa = this.empresaService.getData();
-    debugger
-    if(!this.candidatoService.exists()){
-      this.canditadoLogado = false;
-    } else {
-      this.canditadoLogado = true;
-      this.candidatoService.inscritoEmVaga(this.vaga.id, this.candidato.id).subscribe(inscrito => this.canditadoInscrito = inscrito)
-    }
+
+    this.verificaCandidato()
     this.vagaEmpresaAtual = this.empresaService.exists();
   }
 
@@ -54,6 +54,13 @@ export class VagaComponent implements OnInit {
     return this.router.navigate(['', 'candidatos-vaga', idVaga])
   }
 
-
+  protected verificaCandidato() {
+    if (!this.candidatoService.exists()) {
+      this.canditadoLogado = false;
+    } else {
+      this.canditadoLogado = true;
+      this.candidatoService.inscritoEmVaga(this.vaga.id, this.candidato.id).subscribe(inscrito => this.canditadoInscrito = inscrito)
+    }
+  }
 
 }

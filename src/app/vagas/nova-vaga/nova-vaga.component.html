@@ -32,16 +32,17 @@
         </div>
         <div class="form-group">
             <input formControlName="valor" mask="separator.0" thousandSeparator="." placeholder="Valor R$" class="form-control" />
+            <!-- <input formControlName="valor" mask="separator.0" thousandSeparator="." placeholder="Valor R$" class="form-control" /> -->
             <app-vmessage *ngIf="vagaForm.get('valor').errors?.required" text="O Valor é obrigatório!">
             </app-vmessage>
           </div>
           <div class="form-group">
-              <input formControlName="dataInicio"  mask="00/00/0000" showMaskTyped="true" [dropSpecialCharacters]="false"  placeholder="Data Inicio" class="form-control" />
+              <input formControlName="dataInicio"  placeholder="Data Inicio" class="form-control" />
               <app-vmessage *ngIf="vagaForm.get('dataInicio').errors?.required" text="Data Inicio é obrigatória!">
               </app-vmessage>
             </div>
             <div class="form-group">
-                <input formControlName="dataFim"   mask="00/00/0000" showMaskTyped="true" [dropSpecialCharacters]="false" placeholder="Data Fim" class="form-control" />
+                <input formControlName="dataFim" placeholder="Data Fim" class="form-control" />
                 <app-vmessage *ngIf="vagaForm.get('dataFim').errors?.required" text="Data Fim é obrigatória!">
                 </app-vmessage>
               </div>
@@ -52,7 +53,7 @@
                   </app-vmessage>
                 </div>
                 <div class="form-group">
-                    <input formControlName="estado" mask="SS" placeholder="Estado" class="form-control" />
+                    <input formControlName="estado" placeholder="Estado" class="form-control" />
                     <app-vmessage *ngIf="vagaForm.get('estado').errors?.required" text="O Estado é obrigatória!">
                     </app-vmessage>
                   </div>

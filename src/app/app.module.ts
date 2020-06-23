@@ -8,7 +8,6 @@ import { ErrorsModule } from './errors/errors.module';
 import { VagasModule } from './vagas/vagas.module';
 import { EmpresasModule } from './empresas/empresas.module';
 import { CandidatosModule } from './candidatos/candidatos.module';
-import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 
 @NgModule({
@@ -17,7 +16,6 @@ import { NgxMaskModule, IConfig } from 'ngx-mask'
   ],
   imports: [
     BrowserModule,
-    NgxMaskModule.forRoot(),
     ErrorsModule,
     VagasModule,
     CoreModule,

@@ -5,7 +5,7 @@ import { NovaVagaComponent } from './nova-vaga/nova-vaga.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VmessageModule } from '../shared/components/vmessage/vmessage.module';
 import { RouterModule } from '@angular/router';
-import { NgxMaskModule } from 'ngx-mask';
+//mport { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   imports: [
@@ -13,8 +13,7 @@ import { NgxMaskModule } from 'ngx-mask';
     VagaListModule,
     ReactiveFormsModule,
     VmessageModule,
-    RouterModule,
-    NgxMaskModule.forRoot()
+    RouterModule
   ],
   declarations: [
     NovaVagaComponent, 

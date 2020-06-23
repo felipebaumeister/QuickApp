@@ -39,20 +39,20 @@ export class NovaEmpresaComponent implements OnInit {
       ]],
       telefoneResidencial: [''],
       telefoneComercial: [''],
-      CEP: ['23232332323', [
+      CEP: ['', [
         Validators.required
       ]],
-      endereco: ['Rua a', [
+      endereco: ['', [
         Validators.required
       ]],
-      numero: ['23', [
+      numero: ['', [
         Validators.required
       ]],
       complemento: [''],
-      CPF_CNPJ: ['232332323', [
+      CPF_CNPJ: ['', [
         Validators.required
       ]],
-      dataNascimento: ['1991-02-02', [
+      dataNascimento: ['', [
         Validators.required
       ]]
     });

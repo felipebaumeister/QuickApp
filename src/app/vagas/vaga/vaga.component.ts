@@ -7,6 +7,7 @@ import { CandidatoService } from 'src/app/candidatos/candidato/candidato.service
 import { Candidato } from 'src/app/candidatos/candidato/candidato';
 import { Empresa } from 'src/app/empresas/empresa/empresa';
 
+
 @Component({
   selector: 'app-vaga',
   templateUrl: './vaga.component.html',

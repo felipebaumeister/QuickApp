@@ -1,3 +1,4 @@
+import { MaskConfig } from './../../shared/config/mask/mask.config';
 import { EmpresaService } from './../../empresas/empresa/empresa.service';
 import { Vaga } from './../vaga/vaga';
 import { OcupacaoService } from './../../ocupacao/ocupacao-service';
@@ -19,6 +20,7 @@ export class NovaVagaComponent implements OnInit {
   ocupacoes: Ocupacao[];
   idOcupacao: string;
   empresa: Empresa;
+  public mask = new MaskConfig();
 
   constructor(private ocupacaoService: OcupacaoService,
     private formBuilder: FormBuilder,
@@ -57,12 +59,23 @@ export class NovaVagaComponent implements OnInit {
     this.idOcupacao = id;
   }
 
+  brToEnDate(data: string) {
+    
+    if(!data.includes('/'))
+    return data;
+
+    return data.split('/').reverse().join('-');
+  }
+
   
   addVaga() {
 
     const novaVaga = this.vagaForm.getRawValue() as Vaga;
+   debugger
     novaVaga.idOcupacao = this.idOcupacao;
     novaVaga.idEmpresa = this.empresa.id;
+    novaVaga.dataInicio = this.brToEnDate(novaVaga.dataInicio);
+    novaVaga.dataFim = this.brToEnDate(novaVaga.dataFim);
 
       this.vagaService
         .add(novaVaga).subscribe(() => {

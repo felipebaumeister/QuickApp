@@ -3,7 +3,7 @@
     <h5 class="card-title">{{ vaga?.titulo }}
       <span class="badge badge-light" style="font-style: oblique; font-weight: 300;">
 
-        Publicada em: {{vaga?.dataCriacao}}
+        Publicada em: {{vaga?.dataCriacao | jsonToBrDate}}
 
       </span>
     </h5>
@@ -24,7 +24,7 @@
     <p class="card-text">{{vaga?.descricaoIntegra}}</p>
   <hr />
     <p class="card-text">
-      <b>Data Inicio: </b> {{vaga?.dataInicio}} | <b>Data Fim: </b> {{vaga?.dataFim}} </p>
+      <b>Data Inicio: </b> {{vaga?.dataInicio | jsonToBrDate}} | <b>Data Fim: </b> {{vaga?.dataFim | jsonToBrDate}} </p>
 
       <p class="card-text">
           <b>Tipo: </b> {{vaga?.tipoContratacao}} <span class="badge badge-warning"> {{vaga?.duracao}} </span> </p>

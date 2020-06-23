@@ -8,6 +8,8 @@ import { ErrorsModule } from './errors/errors.module';
 import { VagasModule } from './vagas/vagas.module';
 import { EmpresasModule } from './empresas/empresas.module';
 import { CandidatosModule } from './candidatos/candidatos.module';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+
 
 @NgModule({
   declarations: [
@@ -15,13 +17,15 @@ import { CandidatosModule } from './candidatos/candidatos.module';
   ],
   imports: [
     BrowserModule,
+    NgxMaskModule.forRoot(),
     ErrorsModule,
     VagasModule,
     CoreModule,
     AppRoutingModule,
     EmpresasModule,
     CandidatosModule,
-    VagasModule
+    VagasModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

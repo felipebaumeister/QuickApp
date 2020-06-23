@@ -4,7 +4,7 @@
 
   <div class="form-group">
     <input #userNameInput formControlName="userName" class="form-control" placeholder="Usuário" autofocus />
-    <app-vmessage *ngIf="loginForm.get('userName').errors?.required" text="Usuário é obrogatório!">
+    <app-vmessage *ngIf="loginForm.get('userName').errors?.required" text="Usuário é obrigatório!">
     </app-vmessage>
   </div>
 

@@ -59,6 +59,8 @@ export class VagaComponent implements OnInit {
       this.canditadoLogado = false;
     } else {
       this.canditadoLogado = true;
+
+      if(this.vaga && this.candidato)
       this.candidatoService.inscritoEmVaga(this.vaga.id, this.candidato.id).subscribe(inscrito => this.canditadoInscrito = inscrito)
     }
   }

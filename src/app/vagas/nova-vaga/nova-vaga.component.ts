@@ -41,7 +41,7 @@ export class NovaVagaComponent implements OnInit {
       descricaoIntegra: [``, [
         Validators.required
       ]],
-      idCupacao : [''],
+      idOcupacao : [''],
 
       tipoContratacao: [''],
       duracao: [''],
@@ -61,7 +61,7 @@ export class NovaVagaComponent implements OnInit {
   addVaga() {
 
     const novaVaga = this.vagaForm.getRawValue() as Vaga;
-    novaVaga.idCupacao = this.idOcupacao;
+    novaVaga.idOcupacao = this.idOcupacao;
     novaVaga.idEmpresa = this.empresa.id;
 
       this.vagaService

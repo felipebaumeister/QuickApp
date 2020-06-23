@@ -19,11 +19,11 @@ export class CandidatoVagaListComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    debugger
+
     this.idVaga = this.activatedRoute.snapshot.params.idVaga;
     this.vagaService.getVagaComCandidatos(this.idVaga)
       .subscribe(candidatos => {
-        debugger
+
         this.candidatos = candidatos;
       })
   }

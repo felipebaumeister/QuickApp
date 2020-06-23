@@ -1,6 +1,6 @@
-<div class="container-fluid">
+<div class="container">
     <h2>
-        Area Empregador {{ empresa.nome }}
+        Area Empregador - {{ empresa?.nome }}
     </h2>
     <hr />
     <div class="col-6 mb-3">
@@ -10,7 +10,7 @@
         </a>
     </div>
 
-    <ul class="nav nav-pills">
+    <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link active" data-toggle="pill" href="#vagas">Vagas</a>
         </li>
@@ -18,7 +18,7 @@
             <a class="nav-link" data-toggle="pill" href="#concluidas">Minhas Vagas concluidas</a>
         </li>
     </ul>
-
+    <hr />
     <!-- Tab panes -->
     <div class="tab-content">
         <div class="tab-pane container active" id="vagas">

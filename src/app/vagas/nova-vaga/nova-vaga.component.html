@@ -2,12 +2,12 @@
 
 <form class="form mt-4" [formGroup]="vagaForm" (ngSubmit)="addVaga()">
   <div class="form-group">
-    <select formControlName="idCupacao" placeholder="Ocupação" class="form-control" (change)="selectOption($event.target.value)" >
+    <select formControlName="idOcupacao" placeholder="Ocupação" class="form-control" (change)="selectOption($event.target.value)" >
       <option *ngFor="let option of ocupacoes; index as i" [value]="option.id" [selected]="ocupacoes[0]">
         {{ option.name }}
       </option>
     </select>
-    <app-vmessage *ngIf="vagaForm.get('idCupacao').errors?.required" text="O Ocupação é obrogatório!">
+    <app-vmessage *ngIf="vagaForm.get('idOcupacao').errors?.required" text="O Ocupação é obrogatório!">
       </app-vmessage>
   </div>
   <div class="form-group">

@@ -21,6 +21,11 @@
     </app-vmessage>
   </div>
   <div class="form-group">
+    <input formControlName="competencias" placeholder="Experiência" class="form-control" />
+    <app-vmessage *ngIf="candidatoForm.get('competencias').errors?.required" text="O experiência é obrogatória!">
+    </app-vmessage>
+  </div>
+  <div class="form-group">
     <input formControlName="telefoneCelular" placeholder="Telefone Celular" class="form-control" />
     <app-vmessage *ngIf="candidatoForm.get('telefoneCelular').errors?.required"
       text="O Telefone Celular é obrogatório!">

@@ -38,18 +38,21 @@ export class NovoCandidatoComponent implements OnInit {
     });
 
     this.candidatoForm = this.formBuilder.group({
-      nome: [`Teste ${new Date().valueOf()}`, [
+      nome: ['João', [
         Validators.required
       ]],
-      sobrenome: [`Sobrenome ${new Date().valueOf()}`, [
+      sobrenome: ['Silva Santos', [
         Validators.required
       ]],
-      telefoneCelular: ['113444433', [
+      competencias: ['', [
+        Validators.required
+      ]],
+      telefoneCelular: ['', [
         Validators.required
       ]],
       telefoneResidencial: [''],
       telefoneComercial: [''],
-      CEP: ['23232332323', [
+      CEP: ['08834-123', [
         Validators.required
       ]],
       endereco: ['Rua a', [
@@ -59,7 +62,7 @@ export class NovoCandidatoComponent implements OnInit {
         Validators.required
       ]],
       complemento: [''],
-      CPF_CNPJ: ['232332323', [
+      CPF_CNPJ: ['122.232.565-45', [
         Validators.required
       ]],
       dataNascimento: ['1991-02-02', [

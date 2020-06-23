@@ -20,6 +20,7 @@ export interface Candidato{
     usuario: User;
     idCupacao: string;
     ocupacao: Ocupacao;
+    competencias: string;
 }
 
 // public List<VagaCandidato> VagasCandidato { get; set; }

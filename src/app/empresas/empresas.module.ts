@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { VmessageModule } from '../shared/components/vmessage/vmessage.module';
 import { RouterModule } from '@angular/router';
 import { VagasModule } from '../vagas/vagas.module';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { VagasModule } from '../vagas/vagas.module';
     ReactiveFormsModule,
     VmessageModule,
     RouterModule,
-    VagaListModule
+    VagaListModule,
+    NgxMaskModule.forRoot()
   ],
   declarations: [
     EmpresaComponent,

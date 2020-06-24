@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { CandidatoService } from './candidato/candidato.service';
 import { VagaListModule } from '../vagas/vaga-list/vaga-list.module';
 import { CandidatoVagaListModule } from './candidato-vaga-list/candidato-vaga-list.module';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { CandidatoVagaListModule } from './candidato-vaga-list/candidato-vaga-li
     VmessageModule,
     RouterModule,
     VagaListModule,
-    CandidatoVagaListModule
+    CandidatoVagaListModule,
+    NgxMaskModule.forRoot()
   ],
   declarations: [
     CandidatoComponent, 

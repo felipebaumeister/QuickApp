@@ -76,7 +76,13 @@ export class NovoCandidatoComponent implements OnInit {
     this.idOcupacao = id;
   }
 
+  brToEnDate(data: string) {
+    
+    if(!data.includes('/'))
+    return data;
 
+    return data.split('/').reverse().join('-');
+  }
 
   addCandidato() {
 

@@ -58,6 +58,13 @@ export class NovaEmpresaComponent implements OnInit {
     });
   }
 
+  brToEnDate(data: string) {
+    
+    if(!data.includes('/'))
+    return data;
+
+    return data.split('/').reverse().join('-');
+  }
 
   addEmpresa() {
 

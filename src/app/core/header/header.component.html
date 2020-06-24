@@ -1,6 +1,7 @@
 <header class="fixed-top" style="border-bottom: 1px solid #ddd;">
-  <nav class="navbar navbar-light">
-      <a class="navbar-brand">QuickJobs</a>
+  <nav class="navbar navbar-dark">
+      <div class="navbar-brand"> <img class="thumbnail" src="/assets/logo.jpeg" width="20%" />   </div>
+     
       <div *ngIf="(user$ | async) as user; else login">
           <i class="fa fa-user-circle mr-1"></i>
       <a class="mr-1 mr-5">{{ user.name}}</a>

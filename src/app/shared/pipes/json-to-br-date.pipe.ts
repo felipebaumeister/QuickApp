@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 export class JsonToBrDate implements PipeTransform {
 
     transform(date: string) {
-        debugger
+ 
         if(!date)
            return '';
 

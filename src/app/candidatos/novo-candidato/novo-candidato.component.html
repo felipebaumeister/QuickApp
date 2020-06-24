@@ -26,48 +26,53 @@
     </app-vmessage>
   </div>
   <div class="form-group">
-    <input formControlName="telefoneCelular" placeholder="Telefone Celular" mask="(00) 0000-0000||(00) 0 0000-0000" class="form-control" />
+    <input formControlName="telefoneCelular" placeholder="Telefone Celular" mask="(00) 0000-0000||(00) 0 0000-0000" [dropSpecialCharacters]="false"  class="form-control" />
     <app-vmessage *ngIf="candidatoForm.get('telefoneCelular').errors?.required"
       text="O Telefone Celular é obrogatório!">
     </app-vmessage>
   </div>
   <div class="form-group">
-    <input formControlName="telefoneResidencial" placeholder="Telefone Residencial" mask="(00) 0000-0000" class="form-control" />
+    <input formControlName="telefoneResidencial" placeholder="Telefone Residencial" mask="(00) 0000-0000" [dropSpecialCharacters]="false"  class="form-control" />
   </div>
   <div class="form-group">
-    <input formControlName="telefoneComercial" placeholder="Telefone Comercial" mask="(00) 0000-0000" class="form-control" />
+    <input formControlName="telefoneComercial" placeholder="Telefone Comercial" mask="(00) 0000-0000" [dropSpecialCharacters]="false"  class="form-control" />
   </div>
   <div class="form-group">
-    <input formControlName="CEP" placeholder="CEP" mask="00000-000" class="form-control" />
+    <input formControlName="CEP" placeholder="CEP" mask="00000-000" [dropSpecialCharacters]="false"  class="form-control" />
     <app-vmessage *ngIf="candidatoForm.get('CEP').errors?.required" text="O CEP é obrogatório!">
     </app-vmessage>
   </div>
   <div class="form-group">
     <input formControlName="endereco" placeholder="endereco" class="form-control" />
-    <app-vmessage *ngIf="candidatoForm.get('CEP').errors?.required" text="O Endereço é obrogatório!">
+    <app-vmessage *ngIf="candidatoForm.get('endereco').errors?.required" text="O Endereço é obrogatório!">
     </app-vmessage>
   </div>
 
   <div class="form-group">
     <input formControlName="numero" placeholder="Numero" class="form-control" />
+    <app-vmessage *ngIf="candidatoForm.get('numero').errors?.required" text="O número é obrogatório!">
+    </app-vmessage>
   </div>
 
   <div class="form-group">
     <input formControlName="complemento" placeholder="complemento" class="form-control" />
   </div>
   <div class="form-group">
-    <input formControlName="CPF_CNPJ" placeholder="CPF_CNPJ" mask="000.000.000-00||00.000.000/0000-00" class="form-control" />
+    <input formControlName="CPF_CNPJ" placeholder="CPF_CNPJ" mask="000.000.000-00||00.000.000/0000-00" class="form-control" showMaskTyped="true" [dropSpecialCharacters]="false" />
     <app-vmessage *ngIf="candidatoForm.get('CPF_CNPJ').errors?.required" text="O CPF_CNPJ é obrogatório!">
+    </app-vmessage>
+    <app-vmessage *ngIf="candidatoForm.get('CPF_CNPJ').errors?.pattern" text="O CPF_CNPJ inválido!" >
     </app-vmessage>
   </div>
   <div class="form-group">
     <input formControlName="dataNascimento" mask="00/00/0000" showMaskTyped="true" [dropSpecialCharacters]="false" placeholder="Data de Nascimento" class="form-control" />
     <app-vmessage *ngIf="candidatoForm.get('dataNascimento').errors?.required" text="A Data Nascimento é obrogatório!">
     </app-vmessage>
+
   </div>
 
 
-  <button [disabled]="candidatoForm.invalid || candidatoForm.pending" class="btn btn-primary btn-block">Salvar</button>
-  <button class="btn btn-danger btn-block">Linpar</button>
+  <button [disabled]="candidatoForm.invalid" class="btn btn-primary btn-block">Salvar</button>
+  <button class="btn btn-danger btn-block">Limpar</button>
 
 </form>

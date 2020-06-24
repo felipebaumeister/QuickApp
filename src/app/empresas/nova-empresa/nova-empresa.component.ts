@@ -70,6 +70,8 @@ export class NovaEmpresaComponent implements OnInit {
 
     const novaEmpresa = this.empresaForm.getRawValue() as Empresa;
 
+     novaEmpresa.dataNascimento = this.brToEnDate(novaEmpresa.dataNascimento)
+     
     this.user$.subscribe((user) => {
       
       novaEmpresa.idUsuario = user.id;

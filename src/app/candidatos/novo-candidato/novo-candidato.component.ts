@@ -63,7 +63,8 @@ export class NovoCandidatoComponent implements OnInit {
       ]],
       complemento: [''],
       CPF_CNPJ: ['', [
-        Validators.required
+        Validators.required,
+        Validators.pattern(/(^\d{3}\.\d{3}\.\d{3}\-\d{2}$)|(^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$)/)
       ]],
       dataNascimento: ['', [
         Validators.required
@@ -88,6 +89,7 @@ export class NovoCandidatoComponent implements OnInit {
 
     const novoCandidato = this.candidatoForm.getRawValue() as Candidato;
     novoCandidato.idCupacao = this.idOcupacao;
+    novoCandidato.dataNascimento = this.brToEnDate(novoCandidato.dataNascimento);
 
     this.user$.subscribe((user) => {
 
